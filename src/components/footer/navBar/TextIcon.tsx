@@ -14,7 +14,7 @@ export default function TextIcon({ icon: Icon, name, selected }: TextIconProps) 
       <div className={`${selected ? "w-16" : "w-8"} h-8 flex justify-evenly`}>
         <Icon isFilled={selected} />
       </div>
-      <h4 className={`text-small ${selected ? "font-bold text-primary-500" : "text-neutral-800"}`}>{name}</h4>
+      <p className={`text-small-b ${selected ? "text-primary-500" : "text-neutral-800"}`}>{name}</p>
     </button>
   );
 }
