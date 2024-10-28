@@ -4,7 +4,23 @@ const { background } = require('storybook/internal/theming');
 module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        h1: ['32px', { lineHeight: '40px', letterSpacing: '-1%' }],
+        h2: ['28px', { lineHeight: '32px', letterSpacing: '-1%' }],
+        h3: ['24px', { lineHeight: '28px', letterSpacing: '-1%' }],
+        h4: ['20px', { lineHeight: '24px', letterSpacing: '-1%' }],
+        body: ['16px', { lineHeight: '20px', letterSpacing: '-1%' }],
+        small: ['12px', { lineHeight: '15px', letterSpacing: '0%' }],
+        label: {
+          s: ['14px', { lineHeight: '20px', letterSpacing: '0%' }],
+          m: ['16px', { lineHeight: '20px', letterSpacing: '0%' }]
+        }
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
+    },
     colors: {
       background: "#F4F4F4",
       primary: {
@@ -80,25 +96,6 @@ module.exports = {
         900: "#292B7F"
       }
     },
-    fontFamily: {
-      roboto: ['Roboto', 'sans-serif'],
-      inter: ['Inter', 'sans-serif'],
-      sans: ['sans-serif'],
-    },
-    fontSize: {
-      headline: {
-        1: ['32px', { lineHeight: '40px' }],
-        2: ['28px', { lineHeight: '32px' }],
-        3: ['24px', { lineHeight: '24px' }],
-        4: ['20px', { lineHeight: '24px' }]
-      },
-      body: ['16px', { lineHeight: '20px' }],
-      small: ['12px', { lineHeight: '15px' }],
-      label: {
-        s: ['14px', { lineHeight: '20px' }],
-        m: ['16px', { lineHeight: '20px' }]
-      }
-    }
   },
   plugins: [],
 }
