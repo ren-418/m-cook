@@ -80,6 +80,11 @@ module.exports = {
         900: "#292B7F"
       }
     },
+    fontFamily: {
+      roboto: ['Roboto', 'sans-serif'],
+      inter: ['Inter', 'sans-serif'],
+      sans: ['sans-serif'],
+    },
     fontSize: {
       headline: {
         1: ['32px', { lineHeight: '40px' }],
