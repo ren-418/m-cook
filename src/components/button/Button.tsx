@@ -1,17 +1,20 @@
 import { cva, VariantProps } from 'class-variance-authority'
-import React, { ButtonHTMLAttributes, ReactElement, ReactNode } from 'react'
+import React, { ButtonHTMLAttributes, HtmlHTMLAttributes, ReactElement, ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { IconButtonProps } from '../../icons/button/IconButton';
+import Loading from '../../icons/button/Loading';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+  width?: string;
   children: ReactNode;
   leftIcon?: ReactElement<IconButtonProps>;
   rightIcon?: ReactElement<IconButtonProps>;
+  loading?: boolean;
 }
 
 const buttonVariants = cva(
   // Default class names
-  'rounded-md px-4 py-2 transition duration-200 ease-in-out flex items-center gap-2 appearance-none focus:outline-none'
+  'rounded-md px-4 py-2 transition duration-200 ease-in-out flex items-center justify-center gap-2 appearance-none focus:outline-none'
   , {
   // Variants class names
   variants: {
@@ -66,24 +69,35 @@ const iconColorMap = {
 
 function Button({
   children,
+  width,
   variant='solid',
   size='lg',
   colorType='primary',
   leftIcon,
   rightIcon,
+  loading = false,
   ...props
 }: ButtonProps) {
   const iconColorClass = iconColorMap[variant!!][colorType!!];
-  const leftIconWithColor = leftIcon ? React.cloneElement(leftIcon, { className: iconColorClass }) : null;
-  const rightIconWithColor = rightIcon ? React.cloneElement(rightIcon, { className: iconColorClass }) : null;
+  const loadingIcon = <Loading/>;
+  const leftIconWithColor = leftIcon ? React.cloneElement(leftIcon, { className: iconColorClass  + (loading ? ' opacity-0' : '')}) : null;
+  const rightIconWithColor = loading
+  ? loadingIcon
+    ? React.cloneElement(loadingIcon, { className: iconColorClass + ' animate-spin'})
+    : null
+  : rightIcon
+  ? React.cloneElement(rightIcon, { className: iconColorClass })
+  : null;
   return (
     <button
       {...props}
+      disabled={loading || props.disabled}
       className={twMerge(buttonVariants({ variant, size, colorType })) + ' text-label-s'}
+      style={width ? { width: width } : {}}
     >
-      {leftIcon && <span className={`flex-shrink-0`}>{leftIconWithColor}</span>}
+      {leftIconWithColor && <span className={`flex-shrink-0`}>{leftIconWithColor}</span>}
       {children}
-      {rightIcon && <span className={`flex-shrink-0`}>{rightIconWithColor}</span>}
+      {rightIconWithColor && <span className={`flex-shrink-0`}>{rightIconWithColor}</span>}
     </button>
   );
 }

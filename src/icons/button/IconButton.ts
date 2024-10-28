@@ -1,2 +1,3 @@
-export interface IconButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps {
+    className?: string;
 }
