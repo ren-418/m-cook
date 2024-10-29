@@ -1,4 +1,4 @@
-import { IconNavBarProps } from "../../../icons/navBar/iconNavBar";
+import { IconNavBarProps } from "../../../../icons/navBar/iconNavBar";
 
 type TextIconProps = {
   icon: React.ElementType<IconNavBarProps>;

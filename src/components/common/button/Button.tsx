@@ -1,8 +1,8 @@
 import { cva, VariantProps } from 'class-variance-authority'
-import React, { ButtonHTMLAttributes, HtmlHTMLAttributes, ReactElement, ReactNode } from 'react'
+import React, { ButtonHTMLAttributes, ReactElement, ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
-import { IconButtonProps } from '../../icons/button/IconButton';
-import Loading from '../../icons/button/Loading';
+import { IconButtonProps } from '../../../icons/button/IconButton';
+import Loading from '../../../icons/button/Loading';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   width?: string;
@@ -14,7 +14,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantPr
 
 const buttonVariants = cva(
   // Default class names
-  'rounded-md px-4 py-2 transition duration-200 ease-in-out flex items-center justify-center gap-2 appearance-none focus:outline-none'
+  'rounded-md px-4 py-2 transition duration-200 ease-in-out flex items-center justify-center gap-2 appearance-none focus:outline-none min-w-[150px]'
   , {
   // Variants class names
   variants: {

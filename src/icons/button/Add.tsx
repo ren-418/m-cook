@@ -1,7 +1,6 @@
-import React from 'react'
 import { IconButtonProps } from './IconButton'
 
-function Add({className = ''}:IconButtonProps) {
+export default function Add({className = ''}:IconButtonProps) {
   return (
     <>
         <svg className={className} width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,5 +9,3 @@ function Add({className = ''}:IconButtonProps) {
     </>
   )
 }
-
-export default Add
