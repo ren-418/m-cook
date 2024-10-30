@@ -14,7 +14,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantPr
 
 const buttonVariants = cva(
   // Default class names
-  'rounded-md px-4 py-2 transition duration-200 ease-in-out flex items-center justify-center gap-2 appearance-none focus:outline-none min-w-[150px]'
+  'rounded-[8px] px-4 py-2 transition duration-200 ease-in-out flex items-center justify-center gap-2 appearance-none focus:outline-none min-w-[150px]'
   , {
   // Variants class names
   variants: {
