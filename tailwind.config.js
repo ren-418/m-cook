@@ -22,6 +22,7 @@ module.exports = {
       },
     },
     colors: {
+      transparent: "transparent",
       background: "#F4F4F4",
       primary: {
         50: "#E8F6F4",
@@ -35,6 +36,7 @@ module.exports = {
         800: "#094239",
         900: "#05211C"
       },
+
       neutral: {
         white: "#FFFFFF",
         100: "#EBECED",
