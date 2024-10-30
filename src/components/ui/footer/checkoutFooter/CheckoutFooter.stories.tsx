@@ -16,7 +16,7 @@ const meta = {
   argTypes: {
 
     label: {
-      control: 'text',
+      control: 'select',
       defaultValue: 'Total',
       options: ['Total', 'Subtotal'],
     },
@@ -25,11 +25,12 @@ const meta = {
       options: ['USD', 'EUR', 'GBP', 'ARS'],
     },
     total: {
-      control: 'number',
+      control: { type: 'number', min: 1 },
       defaultValue: 100,
     },
     callToAction: {
-      control: 'text',
+      control: 'select',
+      options: ['Checkout', 'Pay Now'],
       defaultValue: 'Checkout',
     },
 

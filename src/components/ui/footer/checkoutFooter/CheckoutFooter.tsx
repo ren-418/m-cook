@@ -18,12 +18,11 @@ export default function CheckoutFooter(props: CheckoutFooterProps) {
 
 
 
-
   return (
     <footer className="flex flex-col w-full justify-center h-min items-center px-4 py-7 gap-4 shadow-footer">
       <div className="flex flex-row justify-between w-full items-center text-neutral-800 text-label-m">
         <div>{props.label}</div>
-        <div>{`${currencyMap[props.currency]}${props.total}`}</div>
+        <div className={`${(props.total <= 0) && "text-negative-500"}`}>{`${currencyMap[props.currency]}${props.total}`}</div>
       </div>
       <Button variant={"solid"} size={"lg"} width={"100%"} onClick={onClick} loading={isLoading}>
         <span className="text-label-s text-neutral-white ">
