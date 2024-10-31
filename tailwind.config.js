@@ -20,8 +20,13 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
       },
+      boxShadow: {
+        'card': '0px 0px 4px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px 0px rgba(0, 0, 0, 0.5)',
+        'footer': '0px 1px 4px 0px rgba(0,0,0,0.5)'
+      }
     },
     colors: {
+      transparent: "transparent",
       background: "#F4F4F4",
       primary: {
         50: "#E8F6F4",
@@ -35,6 +40,7 @@ module.exports = {
         800: "#094239",
         900: "#05211C"
       },
+
       neutral: {
         white: "#FFFFFF",
         100: "#EBECED",

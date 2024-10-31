@@ -54,8 +54,9 @@ export const PrimarySolidLg: Story = {
     size: 'lg',
     width: '300px',
     loading: false,
-    leftIcon: <Add /> ,
+    leftIcon: <Add />,
     rightIcon: <Add />,
   },
+
 };
 
