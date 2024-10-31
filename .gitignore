@@ -26,3 +26,6 @@ yarn-error.log*
 *storybook.log
 
 .idea
+.idea/
+.cache/
+.cache

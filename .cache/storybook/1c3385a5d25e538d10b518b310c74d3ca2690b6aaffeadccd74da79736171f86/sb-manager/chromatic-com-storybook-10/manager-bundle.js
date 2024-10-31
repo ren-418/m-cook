@@ -1,1 +1,0 @@
-import '/Users/tserra/Documents/git/cook-mate/node_modules/@chromatic-com/storybook/dist/manager.mjs';
