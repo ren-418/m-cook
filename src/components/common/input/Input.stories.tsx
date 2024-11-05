@@ -18,17 +18,17 @@ const meta = {
         control: 'text',
         defaultValue: 'Input',
     },
-    value: {
-        control: 'text',
-        defaultValue: '',
-    },
     placeholder: {
         control: 'text',
         defaultValue: 'Enter text',
     },
-    variant: {
+    icon: {
         control: 'select',
         options: ['email', 'name', 'location'],
+    },
+    error: {
+        control: 'text',
+        defaultValue: '',
     },
     type: {
         control: 'select',
@@ -56,11 +56,12 @@ type Story = StoryObj<typeof meta>;
 export const PrimarySolidLg: Story = {
   args: {
     type: 'text',
-    variant: 'email',
+    icon: 'email',
     label: 'Email',
     placeholder: 'Enter email',
     width: '300px',
     disabled: false,
+    options: ['Option 1', 'Option 2', 'Option 3'],
   },
 };
 
