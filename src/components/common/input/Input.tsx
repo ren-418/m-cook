@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, useState, FC } from 'react';
+import React, { InputHTMLAttributes, useState, FC, useEffect, useRef } from 'react';
 import Email from '../../../icons/input/Email';
 import { cva } from 'class-variance-authority';
 import Eye from '../../../icons/input/Eye';
@@ -80,29 +80,42 @@ const iconStyles = cva('', {
     },
 });
 
-function Input({ width, icon, label, disabled=false, type, error, options, ...props }: InputProps) {
+function Input({ width, icon, label, disabled = false, type, error, options, ...props }: InputProps) {
     const [isFocused, setIsFocused] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState<string>("");
+    const wrapperRef = useRef<HTMLDivElement>(null);
 
     const handleFocus = () => setIsFocused(true);
-    const handleBlur = () => setIsFocused(false);
-
+    
     const handleOptionSelect = (option: string) => {
         setSelectedOption(option);
         setIsOpen(false);
         setIsFocused(false);
-        console.log(option);
     };
+
+    const handleOutsideClick = (event: MouseEvent) => {
+        if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+            setIsOpen(false);
+            setIsFocused(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("mousedown", handleOutsideClick);
+        return () => {
+            document.removeEventListener("mousedown", handleOutsideClick);
+        };
+    }, []);
 
     const ArrowIcon = isOpen ? UpArrow : DownArrow;
     const IconComponent = error ? Error : type === 'password' ? Eye : type === 'select' ? ArrowIcon : variantMap[icon as keyof IconsMap];
-    
+
     const defaultStyles = !isFocused && !disabled && !error;
     const focusStyles = isFocused && !disabled && !error;
 
     return (
-        <div className='relative w-fit h-fit flex flex-col' style={{ width: width || 'auto' }}>
+        <div className='relative w-fit h-fit flex flex-col' style={{ width: width || 'auto' }} ref={wrapperRef}>
             <span className={labelStyles({
                 error: !!error,
                 focus: focusStyles,
@@ -119,16 +132,12 @@ function Input({ width, icon, label, disabled=false, type, error, options, ...pr
                             focus: focusStyles,
                             disabled,
                             default: defaultStyles,
-                        })}  ` }
+                        })} cursor-pointer`}
                         value={selectedOption || ''}
                         readOnly
-                        onFocus={()=> {
+                        onFocus={() => {
                             setIsOpen(true);
                             setIsFocused(true);
-                        }}
-                        onBlur={()=> {
-                            setIsOpen(false);
-                            setIsFocused(false);
                         }}
                         disabled={disabled}
                         {...props}
@@ -142,7 +151,6 @@ function Input({ width, icon, label, disabled=false, type, error, options, ...pr
                             default: defaultStyles,
                         })}
                         onFocus={handleFocus}
-                        onBlur={handleBlur}
                         type={type}
                         disabled={disabled}
                         {...props}

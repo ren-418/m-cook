@@ -1,4 +1,4 @@
-import SmallProductCard from "./smallProductCard";
+import SmallProductCard from "./SmallProductCard";
 import {Meta, StoryObj} from "@storybook/react";
 
 
