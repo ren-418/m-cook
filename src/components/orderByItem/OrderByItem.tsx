@@ -1,4 +1,3 @@
-import { IoMdMenu } from "react-icons/io";
 import Menu from "../../icons/orderBy/Menu";
 
 interface orderByItemProps {
