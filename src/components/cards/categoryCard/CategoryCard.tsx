@@ -1,8 +1,8 @@
 
 interface categoryCardProps {
-    imageUrl: string;
-    categoryName: string;
-    onClick: () => void
+  imageUrl: string;
+  categoryName: string;
+  onClick: () => void
 }
 
 const CategoryCard: React.FC<categoryCardProps> = ({ imageUrl, categoryName, onClick }) => {

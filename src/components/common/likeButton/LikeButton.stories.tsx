@@ -27,7 +27,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const UnFilledLikeButton: Story = {
+export const UnfilledLikeButton: Story = {
     args: {
         onLike: () => {},
         onNotLike: () => {},

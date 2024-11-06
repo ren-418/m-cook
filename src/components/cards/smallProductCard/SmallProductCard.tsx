@@ -1,8 +1,8 @@
 
 interface smallProductCardProps {
-    imageUrl: string;
-    productName: string;
-    onClick: () => void
+  imageUrl: string;
+  productName: string;
+  onClick: () => void
 }
 
 const SmallProductCard: React.FC<smallProductCardProps> = ({ imageUrl, productName, onClick }) => {
