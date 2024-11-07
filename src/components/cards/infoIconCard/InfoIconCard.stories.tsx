@@ -3,25 +3,23 @@ import InfoIconCard from './InfoIconCard'; // Asegúrate de que la ruta sea corr
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-    title: 'Components/Cards/InfoIconCard',
+    title: 'Cards/InfoIconCard',
     component: InfoIconCard,
-
     tags: ['autodocs'],
     parameters: {
         layout: 'centered',
     },
-
     argTypes: {
-        isSelected: {
-            control: { type: 'boolean' },
-            defaultValue: false,
-        },
-        type: {
+        selected: {
             control: {
-                type: 'select',
-                options: ['Vegan', 'Vegetarian', 'GlutenFree', 'Caloric'],
+                type: 'object'
             },
-            defaultValue: 'Vegan',
+            defaultValue: {
+                Vegan: true,
+                Vegetarian: false,
+                GlutenFree: false,
+                Caloric: false,
+            },
         },
     },
 } satisfies Meta<typeof InfoIconCard>;
@@ -30,26 +28,17 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const NotSelected: Story = {
+export const Default: Story = {
     args: {
-        isSelected: false,
-        type: 'Vegan',
+        selected: {
+            Vegan: false,
+            Vegetarian: false,
+            GlutenFree: false,
+            Caloric: false,
+        },
     },
     render: (args) => (
-        <div style={{ width: '200px' }}>
-            <InfoIconCard {...args} />
-        </div>
+        <InfoIconCard {...args} />
     ),
 };
 
-export const Selected: Story = {
-    args: {
-        isSelected: true,
-        type: 'Vegan',
-    },
-    render: (args) => (
-        <div style={{ width: '200px' }}>
-            <InfoIconCard {...args} />
-        </div>
-    ),
-};
