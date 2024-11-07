@@ -1,6 +1,6 @@
 import { InfoIconCardProps } from "./infoIconCard";
 
-export default  function Caloric ({ selected = false} : InfoIconCardProps) {
+export default  function Caloric ({ selected} : InfoIconCardProps) {
     const fillColor = selected ? "#D1EDE8" : "white";
     return (
         <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">

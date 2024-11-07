@@ -1,11 +1,14 @@
 import { InfoIconCardProps } from "./infoIconCard";
+import GlutenFreeGreen from "./GlutenFree-p100.png";
+import GlutenFreeWhite from "./GlutenFree-white.png";
 
-export default function GlutenFree({ selected = false }: InfoIconCardProps) {
-    const fillColor = selected ? "#D1EDE8" : "white";
 
-    return(
-        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="20" height="20" fill={fillColor}/>
+export default function GlutenFree({ selected  }: InfoIconCardProps) {
+    const image = selected ? GlutenFreeGreen : GlutenFreeWhite;
+
+    return (
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <image href={image} width="13" height="13" />
         </svg>
-);
+    );
 }

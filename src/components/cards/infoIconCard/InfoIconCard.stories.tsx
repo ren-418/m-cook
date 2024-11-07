@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoIconCard from './InfoIconCard'; // Asegúrate de que la ruta sea correcta
+import InfoIconCard from './InfoIconCard';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
@@ -41,4 +41,3 @@ export const Default: Story = {
         <InfoIconCard {...args} />
     ),
 };
-
