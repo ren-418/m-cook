@@ -3,7 +3,7 @@ import { SupportedCurrencies } from "../../ui/footer/checkoutFooter/checkoutFoot
 type PriceBoxProps = {
   currency: SupportedCurrencies;
   actualPrice: number;
-  discount: number;
+  discount?: number;
   inline?: boolean;
 }
 
