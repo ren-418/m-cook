@@ -19,7 +19,7 @@ export default meta;
 
 type Story = StoryObj<typeof IconsCard>;
 
-export const Example: Story = {
+export const IconsCardDefault: Story = {
     args: {
         veganActive: true,
         vegetarianActive: false,
