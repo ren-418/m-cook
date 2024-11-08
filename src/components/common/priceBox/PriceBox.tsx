@@ -12,6 +12,6 @@ export default function PriceBox({ inline = false, discount, currency, actualPri
       <span className="text-right text-neutral-800 text-body-b align-middle">
         {currencyMap[currency]}{actualPrice - (actualPrice * discount / 100)}
       </span>
-    </div>
-  );
+        </div>
+    );
 }
