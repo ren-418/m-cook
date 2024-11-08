@@ -2,11 +2,14 @@ import IngredientCartItem from "./IngredientCartItem";
 import {Meta, StoryObj} from "@storybook/react";
 
 const meta ={
-    title: "components/cards/IngredientCartItem",
+    title: "Cards/IngredientCartItem",
     component: IngredientCartItem,
     parameters: {
         layout: "centered",
     },
+
+    tags: ['autodocs'],
+    
     argTypes: {
         currency: {
             control: "select",

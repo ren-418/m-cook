@@ -11,8 +11,8 @@ type NumberInputProps = {
 export default function NumberInput({ width, count = 0, setCount }: NumberInputProps) {
   return (
     <div
-      className={`flex flex-row justify-center text-m border gap-2.5 border-neutral-black rounded-lg items-center`}
-      style={{ width: width, userSelect: "none" }}
+      className={`select-none h-[44px] w-[90px] flex flex-row justify-center text-m border gap-2.5 border-neutral-black rounded-lg items-center`}
+      style={{ width: width}}
     >
       <Minus className="hover:bg-neutral-100 rounded-md transition-all" onClick={() => { count > 1 && setCount(count - 1) }} />
       {count}

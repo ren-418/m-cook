@@ -17,12 +17,24 @@ const IngredientCartItem: React.FC<IngredientCartItemProps> = ({ name, brand, fi
     const [count, setCount] = React.useState(1);
 
     return (
-        <div className="flex gap-4 w-[390px] h-[120px] shadow-menu px-[13px] py-[16px]">
-            <div className="w-[266px] h-[88px] gap-[13px] flex ">
+        <div className="flex gap-4 w-[390px] h-[120px] border-b-[1px] border-b-neutral-200 px-[13px] py-[16px]">
+            <div className="w-[266px] h-[88px] gap-[13px] flex items-center">
                 <img className="h-[80px] w-[80px] rounded-[20px] object-cover" src={imageUrl} alt="product"/>
-                <div className="flex flex-col gap-1">
-                    <span className="text-label-m text-neutral-dark">{name}</span>
-                    <span className="text-label-s text-neutral-light">{brand}</span>
+                <div className="flex flex-col gap-1 h-full w-full">
+                    <span className="text-label-m text-neutral-800 overflow-hidden text-ellipsis"
+                    style={{
+                        display: '-webkit-box',
+                        WebkitBoxOrient: 'vertical',
+                        WebkitLineClamp: 2,
+                      }}
+                      >{name}</span>
+                    <span className="text-small text-neutral-700 overflow-hidden text-ellipsis"
+                    style={{
+                        display: '-webkit-box',
+                        WebkitBoxOrient: 'vertical',
+                        WebkitLineClamp: 1,
+                      }}
+                      >{brand}</span>
                 </div>
             </div>
             <div className="flex flex-col justify-between w-[90px] h-[88px]">
