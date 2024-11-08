@@ -18,11 +18,11 @@ const meta = {
     },
     actualPrice: {
       control: { type: 'number', min: 1 },
-      defaultValue: 100,
+      defaultValue: 2500,
     },
     discount: {
       control: { type: 'number', min: 0 },
-      defaultValue: 100,
+      defaultValue: 20,
     },
     inline: {
       control: { type: 'boolean' },
@@ -37,8 +37,8 @@ type Story = StoryObj<typeof meta>;
 export const PriceBoxDefault: Story = {
   args: {
     currency: 'USD',
-    actualPrice: 100,
-    discount: 50,
+    actualPrice: 2500,
+    discount: 20,
     inline: true,
   },
 
