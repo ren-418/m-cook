@@ -2,6 +2,7 @@ import React from 'react'
 import PriceBox from '../../common/priceBox/PriceBox'
 import Button from '../../common/button/Button'
 import LikeButton from '../../common/likeButton/LikeButton'
+import IconsCard from '../../common/infoIconCard/IconsCard'
 
 interface ProductCardProps {
   ingredientName: string,
@@ -36,6 +37,7 @@ function ProductCards({ingredientName, brandName, activeIcons, imageSrc, price, 
         }}
         >{brandName}</p>
         <PriceBox inline={true} discount={discount} actualPrice={price} currency='USD'/>
+        <IconsCard selections={activeIcons}/>
         <Button onClick={onClick} size='sm' >
           Add To Cart
         </Button>

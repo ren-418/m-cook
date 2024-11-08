@@ -5,11 +5,11 @@ import VeganIcon from "../../../icons/infoIcon/Vegan";
 import VegetarianIcon from "../../../icons/infoIcon/Vegetarian";
 
 interface IconProperties {
-    isActive: boolean;
+    isActive?: boolean;
     type: 'Vegan' | 'Vegetarian' | 'GlutenFree' | 'Caloric';
 }
 
-const InfoIcon: React.FC<IconProperties> = ({ isActive, type }) => {
+const InfoIcon: React.FC<IconProperties> = ({ isActive = false, type }) => {
     const iconComponents = {
         Vegan: VeganIcon,
         Vegetarian: VegetarianIcon,
@@ -21,7 +21,7 @@ const InfoIcon: React.FC<IconProperties> = ({ isActive, type }) => {
 
     return (
         <div
-            className={`w-[27px] h-[27px] rounded-full flex items-center justify-center cursor-pointer 
+            className={`w-[27px] h-[27px] rounded-full flex items-center justify-center
             ${isActive ? 'bg-primary-800' : 'bg-primary-200'}`}
         >
             <IconComponent selected={isActive} />
