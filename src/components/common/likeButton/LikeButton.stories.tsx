@@ -13,14 +13,7 @@ const meta = {
 
     tags: ['autodocs'],
 
-    argTypes: {
-        onLike: {
-            action: 'liked',
-        },
-        onNotLike: {
-            action: 'not liked',
-        },
-    },
+    argTypes: {},
 } satisfies Meta<typeof LikeButton>;
 
 export default meta;
@@ -28,9 +21,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const UnfilledLikeButton: Story = {
-    args: {
-        onLike: () => {},
-        onNotLike: () => {},
-    },
+    args: {},
 };
 
