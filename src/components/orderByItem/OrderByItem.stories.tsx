@@ -29,9 +29,4 @@ export const OrderByItemDefault: Story = {
         index: 0,
         onClick: () => {}
     },
-    render: (args) => (
-        <div style={{ width: '358px' }}>
-            <OrderByItem {...args} />
-        </div>
-    ),
 };
