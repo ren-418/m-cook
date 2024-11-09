@@ -8,7 +8,7 @@ interface categoryCardProps {
       return (
           <button 
               onClick={onClick} 
-              className="flex items-center w-[156px] h-[60px] p-[8px] shadow-[0_0_4px_1px_rgba(0,0,0,0.1),0_0_1px_0_rgba(0,0,0,0.5)] rounded-[12px]"
+              className="flex items-center w-[156px] h-[60px] p-[8px] shadow-[0_0_4px_1px_rgba(0,0,0,0.1),0_0_1px_0_rgba(0,0,0,0.5)] rounded-[8px]"
           >
               <img 
                   src={imageUrl} 

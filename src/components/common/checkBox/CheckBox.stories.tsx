@@ -1,4 +1,5 @@
 import CheckBox from "./CheckBox";
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
@@ -11,14 +12,24 @@ const meta = {
 
     tags: ['autodocs'],
 
-    argTypes: {},
+    argTypes: {
+        onChecked: {
+            action: 'checked',
+        },
+        onNotChecked: {
+            action: 'not checked',
+        },
+    },
 } satisfies Meta<typeof CheckBox>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const UnclickedCheckBox: Story = {
-    args: {},
+export const UnClickedCheckBox: Story = {
+    args: {
+        onChecked: () => {},
+        onNotChecked: () => {},
+    },
 };
 
