@@ -111,16 +111,16 @@ function Input({ width, icon, label, disabled = false, type, error, options, ...
     const ArrowIcon = isOpen ? UpArrow : DownArrow;
     const IconComponent = error ? Error : type === 'password' ? Eye : type === 'select' ? ArrowIcon : variantMap[icon as keyof IconsMap];
 
-    const defaultStyles = !isFocused && !disabled && !error;
-    const focusStyles = isFocused && !disabled && !error;
+    const defaultStylesEnabled = !isFocused && !disabled && !error;
+    const focusStylesEnabled = isFocused && !disabled && !error;
 
     return (
         <div className='relative w-fit h-fit flex flex-col' style={{ width: width || 'auto' }} ref={wrapperRef}>
             <span className={labelStyles({
                 error: !!error,
-                focus: focusStyles,
+                focus: focusStylesEnabled,
                 disabled,
-                default: defaultStyles
+                default: defaultStylesEnabled
             })}>
                 {label}
             </span>
@@ -129,10 +129,10 @@ function Input({ width, icon, label, disabled = false, type, error, options, ...
                     <input
                         className={`${inputStyles({
                             error: !!error,
-                            focus: focusStyles,
+                            focus: focusStylesEnabled,
                             disabled,
-                            default: defaultStyles,
-                        })} cursor-pointer`}
+                            default: defaultStylesEnabled,
+                        })} ${!disabled ? 'cursor-pointer': 'cursor-not-allowed'}`}
                         value={selectedOption || ''}
                         readOnly
                         onFocus={() => {
@@ -146,9 +146,9 @@ function Input({ width, icon, label, disabled = false, type, error, options, ...
                     <input
                         className={inputStyles({
                             error: !!error,
-                            focus: focusStyles,
+                            focus: focusStylesEnabled,
                             disabled,
-                            default: defaultStyles,
+                            default: defaultStylesEnabled,
                         })}
                         onFocus={handleFocus}
                         type={type}
@@ -158,7 +158,7 @@ function Input({ width, icon, label, disabled = false, type, error, options, ...
                 )}
                 {(icon || type === 'password' || type === 'select') && (
                     <span className='absolute right-[8px] top-1/2 transform -translate-y-1/2'>
-                        <IconComponent className={iconStyles({ error: !!error, focus: focusStyles, disabled, default: defaultStyles })} />
+                        <IconComponent className={iconStyles({ error: !!error, focus: focusStylesEnabled, disabled, default: defaultStylesEnabled })} />
                     </span>
                 )}
             </div>
