@@ -1,7 +1,6 @@
 import RecipeCard from "./RecipeCard";
 import {Meta, StoryObj} from "@storybook/react";
 
-
 const meta = {
     title: 'Cards/RecipeCard',
     component: RecipeCard,
