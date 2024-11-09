@@ -3,8 +3,8 @@ import { IconNavBarProps } from "../../../../icons/navBar/iconNavBar";
 import IngredientsIcon from "../../../../icons/navBar/Ingredients";
 import RecipesIcon from "../../../../icons/navBar/Recipes";
 import VideosIcon from "../../../../icons/navBar/Videos";
-import { NavBarProps } from "./navBarProps";
 import TextIcon from "./TextIcon";
+import React from "react";
 
 
 const navBarItems: { icon: React.ElementType<IconNavBarProps>, name: string }[] = [
@@ -17,11 +17,12 @@ const navBarItems: { icon: React.ElementType<IconNavBarProps>, name: string }[] 
 
 
 
-export default function NavBar({ currentPage = 0 }: NavBarProps) {
+export default function NavBar() {
+  const [currentPage, setCurrentPage] = React.useState(0);
   return (
-    <footer className="flex gap-2 w-full pb-3 justify-evenly items-center  px-2 shadow-xl overflow-x-hidden ">
+    <footer className="h-[90px] flex gap-[8px] w-full justify-evenly items-center px-[8px] shadow-footer overflow-x-hidden">
       {navBarItems.map(({ icon, name }, index) => (
-        <TextIcon key={name} icon={icon} name={name} selected={currentPage === index} />
+        <TextIcon key={name} icon={icon} name={name} selected={currentPage === index} onClick={()=>{setCurrentPage(index)}}/>
       ))}
     </footer>
   );
