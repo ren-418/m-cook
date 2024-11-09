@@ -12,7 +12,7 @@ const meta = {
     tags: ['autodocs'],
 
     argTypes: {},
-};
+} satisfies Meta<typeof CheckBox>;
 
 export default meta;
 

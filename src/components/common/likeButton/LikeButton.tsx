@@ -2,21 +2,11 @@ import React from 'react';
 import HeartIcon from "../../../icons/likeButton/HeartIcon";
 import HeartFilledIcon from "../../../icons/likeButton/HeartFilledIcon";
 
-interface LikeButtonProps {
-    onLike?: () => void;
-    onNotLike?: () => void;
-}
-
-const LikeButton: React.FC<LikeButtonProps> = ({ onLike = () => {}, onNotLike = () => {}}) => {
+const LikeButton: React.FC = () => {
     const [liked, setLiked] = React.useState(false);
 
     const handleClick = () => {
         setLiked(!liked);
-        if (liked) {
-            onNotLike();
-        } else {
-            onLike();
-        }
     };
 
     return (

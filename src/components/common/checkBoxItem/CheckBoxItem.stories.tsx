@@ -18,7 +18,7 @@ const meta = {
             },
         },
     },
-};
+} satisfies Meta<typeof CheckBoxItem>;
 
 export default meta;
 
