@@ -12,7 +12,7 @@ const LikeButton: React.FC = () => {
     return (
         <button
             onClick={handleClick}
-            className="shadow-card w-[34px] h-[34px] rounded-[50%] bg-neutral-white flex items-center justify-center"
+            className="shadow-card w-[34px] h-[34px] rounded-[50%] bg-neutral-white flex items-center justify-center pt-[2px]"
         >
             {liked ? <HeartFilledIcon/> : <HeartIcon/>}
         </button>
