@@ -16,7 +16,7 @@ interface ProductCardProps {
 
 function ProductCards({ingredientName, brandName, activeIcons, imageSrc, price, discount=0, onClick=()=>{}}: ProductCardProps) {
   return (
-    <div className='select-none flex flex-col overflow-hidden rounded-[12px] shadow-card bg-neutral-white w-[170px] h-[252px]'>
+    <div className='select-none flex flex-col overflow-hidden rounded-[12px] shadow-card bg-neutral-white w-[170px] h-[252px] relative'>
       <div className='absolute top-[13px] right-[13px] z-10'>
         <LikeButton />
       </div>

@@ -9,7 +9,7 @@ interface FilterSectionProps {
 
 const FilterSection: React.FC<FilterSectionProps> = ({ text, onOrderBy, onFilter }) => {
     return (
-        <div className="flex items-center justify-between w-[376px] h-[20px]" onClick={onOrderBy}>
+        <div className="flex items-center justify-between w-full h-[20px]" onClick={onOrderBy}>
             <div className="flex align-middle ">
                 <p className="text-[14px] text-neutral-800 text-body-b mr-2">Order by</p>
                 <DownArrow />

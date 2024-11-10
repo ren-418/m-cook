@@ -20,8 +20,11 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose }) => {
             }
         };
 
-        if (isOpen)     document.addEventListener('mousedown', handleClickOutside);
-        else            document.removeEventListener('mousedown', handleClickOutside);
+        if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
 
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
@@ -29,39 +32,39 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose }) => {
     }, [isOpen, onClose]);
 
     return (
-        <div
-            className={`fixed inset-0 bg-black bg-opacity-20 flex justify-center items-end ${isOpen ? 'visible' : 'invisible'}`}
-        >
-            <div
-                ref={bottomSheetRef}
-                className={`flex flex-col items-center p-[10px_16px] gap-5 absolute w-[390px] left-0 top-[36px] transition-all duration-500 ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
-                onClick={(e) => e.stopPropagation()}
-            >
-                {isOpen && (
-                    <div className="flex flex-col items-center gap-2 w-full absolute top-0" style={{ paddingTop: '16px', paddingBottom: '12px', zIndex: 10 }}>
+        <div className={`fixed inset-0 flex justify-center items-end `}>
+            <div className="bg-neutral-800 bg-opacity-20 fixed inset-0 " onClick={onClose}></div>
+            <div className="bg-neutral-white opacity-100 relative rounded-t-[20px]">
+                <div
+                    ref={bottomSheetRef}
+                    className={`flex flex-col items-center p-[10px_16px] gap-5 w-[390px] bottom-0 transition-all duration-500 opacity-100 rounded-t-[16px]`}
+                >
+
+                    <div className="flex flex-col items-center gap-2 w-full absolute top-0 opacity-100" style={{ paddingTop: '16px', paddingBottom: '12px', zIndex: 10 }}>
                         <DragHandle onClick={onClose} />
                     </div>
-                )}
 
-                <div className="flex flex-col items-start gap-4 w-[358px] h-[175px]">
-                    <h2 className="text-lg font-semibold text-left">Sort By</h2>
-                    <OrderByItem criteria="Quality" index={0} onClick={() => {}} />
-                    <OrderByItem criteria="Price" index={1} onClick={() => {}} />
-                    <OrderByItem criteria="Location" index={2} onClick={() => {}} />
-                </div>
 
-                <div className="flex flex-col items-start gap-5 w-[358px] h-[175px]">
-                    <h2 className="text-lg font-semibold text-left">Filter By</h2>
-                    <div className="grid grid-cols-3 gap-4 w-[358px] h-[96px]">
-                        <CheckBoxItem title="Filter" />
-                        <CheckBoxItem title="Vegan" />
-                        <CheckBoxItem title="Sweet" />
-                        <CheckBoxItem title="Vegetarian" />
-                        <CheckBoxItem title="Low Calories" />
-                        <CheckBoxItem title="Savory" />
-                        <CheckBoxItem title="Gluten Free" />
-                        <CheckBoxItem title="Spicy" />
-                        <CheckBoxItem title="Organic" />
+                    <div className="flex flex-col items-start gap-4 w-[358px] h-[175px] opacity-100">
+                        <h2 className="text-lg font-semibold text-left opacity-100">Sort By</h2>
+                        <OrderByItem criteria="Quality" index={0} onClick={() => {}} />
+                        <OrderByItem criteria="Price" index={1} onClick={() => {}} />
+                        <OrderByItem criteria="Location" index={2} onClick={() => {}} />
+                    </div>
+
+                    <div className="flex flex-col items-start gap-5 w-[358px] h-[175px] opacity-100">
+                        <h2 className="text-lg font-semibold text-left">Filter By</h2>
+                        <div className="grid grid-cols-3 gap-4 w-[358px] h-[96px]">
+                            <CheckBoxItem title="Filter" />
+                            <CheckBoxItem title="Vegan" />
+                            <CheckBoxItem title="Sweet" />
+                            <CheckBoxItem title="Vegetarian" />
+                            <CheckBoxItem title="Low Calories" />
+                            <CheckBoxItem title="Savory" />
+                            <CheckBoxItem title="Gluten Free" />
+                            <CheckBoxItem title="Spicy" />
+                            <CheckBoxItem title="Organic" />
+                        </div>
                     </div>
                 </div>
             </div>

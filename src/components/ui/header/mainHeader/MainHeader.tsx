@@ -9,7 +9,7 @@ interface MainHeaderProps {
 
 const MainHeader: React.FC<MainHeaderProps> = ({ text, productsInCart }) => {
     return (
-        <header className="h-min-[90px] h-[90px] w-full flex items-end justify-center py-[8px] px-[16px] shadow-[0_-1px_4px_0_rgba(0,0,0,0.25)]">
+        <header className="h-min-[90px] h-[90px] w-full flex items-end justify-center py-[8px] px-[16px] shadow-[0_-1px_4px_0_rgba(0,0,0,0.25)] bg-neutral-white">
             <div className="w-full flex justify-between items-center">
                 <button>
                     <ProfileIcon/>
