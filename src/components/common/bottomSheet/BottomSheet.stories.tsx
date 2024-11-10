@@ -1,12 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 import BottomSheet from "./BottomSheet";
-import { useState } from "react"; // Asegúrate de que la ruta sea correcta
+import { useState } from "react";
+import DragHandle from "../../../icons/BottomSheet/DragHandle";
 
 const meta = {
     title: 'Components/BottomSheet',
     component: BottomSheet,
     parameters: {
-        layout: 'centered', // Esto asegura que el componente esté centrado en la vista
+        layout: 'centered',
     },
     tags: ['autodocs'],
     argTypes: {
@@ -14,7 +15,7 @@ const meta = {
             control: 'boolean',
         },
         onClose: {
-            action: 'closed', // Esto genera una acción llamada "closed" en el panel de controles
+            action: 'closed',
         },
     },
 } satisfies Meta<typeof BottomSheet>;
@@ -31,20 +32,18 @@ export const Default: Story = {
     render: (args) => {
         const [isOpen, setIsOpen] = useState(args.isOpen);
 
-        // Función para cerrar el bottom sheet
         const handleClose = () => {
             setIsOpen(false);
-            args.onClose(); // Llamar a la función onClose pasada por args
+            args.onClose();
         };
 
         return (
-            <div className="w-full h-screen flex justify-center items-center bg-gray-100">
-                {/* Botón para abrir el BottomSheet */}
-                <button onClick={() => setIsOpen(true)} className="mb-4 p-2 bg-blue-500 text-white rounded">
-                    Open BottomSheet
-                </button>
-
-                {/* Renderizar el BottomSheet */}
+            <div className="w-full flex justify-center items-center bg-gray-100">
+                {!isOpen && (
+                    <div className="w-[390px] h-[36px] flex justify-center items-center absolute bottom-0 left-0 right-0 mx-auto p-2 bg-blue-500 text-white rounded cursor-pointer" onClick={() => setIsOpen(true)}>
+                        <DragHandle />
+                    </div>
+                )}
                 <div className="w-[390px] h-[444px]">
                     <BottomSheet {...args} isOpen={isOpen} onClose={handleClose} />
                 </div>

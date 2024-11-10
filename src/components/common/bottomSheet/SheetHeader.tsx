@@ -26,7 +26,6 @@ const SheetHeader: React.FC = () => {
 const DragHandle: React.FC<{ onClick: () => void }> = ({ onClick }) => {
     return (
         <div className="cursor-pointer" onClick={onClick}>
-            {/* SVG de arrastre */}
             <svg width="32" height="4" viewBox="0 0 32 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="32" height="4" rx="2" fill="#AEB3B8" />
             </svg>
