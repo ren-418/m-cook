@@ -6,6 +6,7 @@ import SmallProductCard from "../../cards/smallProductCard/SmallProductCard";
 type SearchBarProps = {
   isSelector: boolean;
   placeholder: string;
+
 }
 
 
