@@ -4,7 +4,7 @@ import ShareButton from '../../../icons/carrousel/ShareButton';
 
 
 export type ImageCarrouselProps = {
-  images: JSX.Element[];
+  images: string[];
 }
 
 
@@ -13,23 +13,26 @@ const settings = {
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: true,
+  autoplay: false,
   speed: 400,
-  autoplaySpeed: 3000,
   cssEase: "ease-in-out",
   arrows: false,
+  dotsClass: 'slick-dots w-fit h-fit absolute bottom-[10px] left-0 right-0 m-auto gap-0',
+  className: 'w-full h-full',
 }
 
 
 
 export default function ImageCarrousel(props: ImageCarrouselProps) {
   return (
-    <div className="relative">
-      <BackArrow className={'absolute top-0 left-0 m-2 z-10'} />
-      <ShareButton className={'absolute top-0 right-0 m-2 z-10'} />
+    <div className="relative w-full h-[200px] overflow-hidden">
+      <BackArrow className={'absolute top-[40px] left-[15px] z-10 cursor-pointer'} />
+      <ShareButton className={'absolute top-[40px] right-[15px] z-10 cursor-pointer'} />
       <Slider {...settings}>
         {props.images.map((image, index) => (
-          <div className='w-full overflow-hidden' key={index}>{image}</div>
+          <div className='w-full overflow-hidden h-full' key={index}>
+            <img src={image} alt={""+index} style={{ width: '100%' }} />,
+          </div>
         ))}
       </Slider>
     </div>
