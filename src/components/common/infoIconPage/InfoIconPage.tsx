@@ -1,5 +1,4 @@
 import React from "react";
-import InfoIcon from "../infoIconCard/InfoIcon";
 import RecipeIcon from "./RecipeIcon";
 
 interface IconProperties {
