@@ -11,16 +11,16 @@ const Template: StoryFn<ImageCarrouselProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   images: [
-    <img src="https://th.bing.com/th/id/OIP.74L1tQJeO5RJeCqyLFyWPAHaFb?w=246&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Placeholder 2" style={{ width: '100%' }} />,
-    <img src="https://th.bing.com/th/id/OIP.74L1tQJeO5RJeCqyLFyWPAHaFb?w=246&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Placeholder 3" style={{ width: '100%' }} />,
-    <img src="https://th.bing.com/th/id/OIP.74L1tQJeO5RJeCqyLFyWPAHaFb?w=246&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Placeholder 3" style={{ width: '100%' }} />,
-    <img src="https://th.bing.com/th/id/OIP.74L1tQJeO5RJeCqyLFyWPAHaFb?w=246&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Placeholder 3" style={{ width: '100%' }} />,
+    "https://th.bing.com/th/id/OIP.74L1tQJeO5RJeCqyLFyWPAHaFb?w=246&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "https://th.bing.com/th/id/OIP.74L1tQJeO5RJeCqyLFyWPAHaFb?w=246&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "https://th.bing.com/th/id/OIP.74L1tQJeO5RJeCqyLFyWPAHaFb?w=246&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "https://th.bing.com/th/id/OIP.74L1tQJeO5RJeCqyLFyWPAHaFb?w=246&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7",
   ],
 };
 
 
 export default {
-  title: 'Components/ImageCarrousel',
+  title: 'UI/Header/ImageCarrousel',
   component: ImageCarrousel,
   parameters: {
     layout: 'centered',

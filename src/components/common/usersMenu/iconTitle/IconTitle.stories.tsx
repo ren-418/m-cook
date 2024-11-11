@@ -13,11 +13,11 @@ const meta = {
     tags: ['autodocs'],
 
     argTypes: {
-        icon: {
-            control: 'text',
-        },
         title: {
             control: 'text',
+        },
+        icon: {
+            control: 'object',
         },
     },
 } satisfies Meta<typeof IconTitle>;
@@ -26,7 +26,7 @@ export default meta;
 
 export const IconTitleDefault = {
     args: {
-        icon: <Engine/>,
         title: 'Title',
+        icon: <Engine/>,
     },
 };

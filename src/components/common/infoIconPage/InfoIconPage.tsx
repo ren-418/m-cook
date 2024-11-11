@@ -9,7 +9,7 @@ interface IconProperties {
 
 const InfoIconPage: React.FC<IconProperties> = ({ upperText, lowerText, iconVariant }) => {
     return (
-        <div className="info-icon-page items-center justify-center flex flex-col bg-white rounded-[31px] p-4 w-[61px] h-[99px] shadow-card">
+        <div className="info-icon-page items-center justify-start flex flex-col bg-neutral-white rounded-[31px] p-[4px] w-[61px] h-[99px] shadow-card">
             <div className="icon-container mb-[5px] mt-[4px]">
                 {<RecipeIcon type={iconVariant} />}
             </div>
