@@ -14,7 +14,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantPr
 
 const buttonVariants = cva(
   // Default class names
-  'rounded-[8px] px-4 py-2 transition duration-200 ease-in-out flex items-center justify-center gap-2 appearance-none focus:outline-none min-w-[150px]'
+  'rounded-[8px] select-none px-4 py-2 transition duration-200 ease-in-out flex items-center justify-center gap-2 appearance-none focus:outline-none min-w-[150px] leading-[0px] active:opacity-50'
   , {
   // Variants class names
   variants: {
@@ -34,16 +34,16 @@ const buttonVariants = cva(
   },
   compoundVariants: [
     // Solid Variant Background Colors
-    { variant: 'solid', colorType: 'primary', class: 'bg-primary-500 text-neutral-white hover:opacity-50' },
-    { variant: 'solid', colorType: 'info', class: 'bg-info-500 text-neutral-white hover:opacity-50' },
+    { variant: 'solid', colorType: 'primary', class: 'bg-primary-500 text-neutral-white' },
+    { variant: 'solid', colorType: 'info', class: 'bg-info-500 text-neutral-white' },
 
     // Outline Variant Border Colors
-    { variant: 'outline', colorType: 'primary', class: 'border-primary-500 text-primary-500 hover:opacity-50' },
-    { variant: 'outline', colorType: 'info', class: 'border-info-500 text-info-500 hover:opacity-50' },
+    { variant: 'outline', colorType: 'primary', class: 'border-primary-500 text-primary-500' },
+    { variant: 'outline', colorType: 'info', class: 'border-info-500 text-info-500' },
 
     // Text Variant Hover Colors
-    { variant: 'text', colorType: 'primary', class: 'text-primary-500 hover:opacity-50' },
-    { variant: 'text', colorType: 'info', class: 'text-info-500 hover:opacity-50' },
+    { variant: 'text', colorType: 'primary', class: 'text-primary-500' },
+    { variant: 'text', colorType: 'info', class: 'text-info-500' },
   ],
   defaultVariants: {
     variant: 'solid',
@@ -88,6 +88,7 @@ function Button({
   : rightIcon
   ? React.cloneElement(rightIcon, { className: iconColorClass })
   : null;
+
   return (
     <button
       {...props}

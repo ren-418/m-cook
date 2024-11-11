@@ -3,20 +3,20 @@ import IconsCard from "../../common/infoIconCard/IconsCard";
 import React from "react";
 
 interface RecipeCardProps {
-    ingredientName: string,
-    brandName: string,
+    name: string,
+    description: string,
     activeIcons: boolean[],
     imageSrc: string,
 }
 
-function RecipeCard({ingredientName, brandName, activeIcons, imageSrc}: RecipeCardProps) {
+function RecipeCard({name, description, activeIcons, imageSrc}: RecipeCardProps) {
     return (
-        <div className='select-none flex flex-col overflow-hidden rounded-[12px] shadow-card bg-neutral-white w-[170px] h-[252px]'>
-            <div className='absolute top-[13px] right-[13px] z-10'>
+        <div className='relative select-none flex flex-col overflow-hidden rounded-[12px] shadow-card bg-neutral-white w-[170px] h-[252px]'>
+            <div className='absolute top-[6px] right-[6px] z-10'>
                 <LikeButton />
             </div>
             <img draggable={false} src={imageSrc} className='w-full h-[93px] object-cover'/>
-            <div className='w-full h-full p-[8px] gap-[5px] flex flex-col'>
+            <div className='w-full h-full p-[8px] gap-[5px] flex flex-col justify-between'>
                 <div className='w-full h-full gap-[4px] flex flex-col items-left'>
                     <p className='text-body-b text-neutral-800 w-full overflow-hidden text-ellipsis'
                        style={{
@@ -25,18 +25,16 @@ function RecipeCard({ingredientName, brandName, activeIcons, imageSrc}: RecipeCa
                            WebkitLineClamp: 2,
                            height: 'auto',
                        }}
-                    >{ingredientName}</p>
+                    >{name}</p>
                     <p className='text-small text-neutral-700 w-full overflow-hidden text-ellipsis'
                        style={{
                            display: '-webkit-box',
                            WebkitBoxOrient: 'vertical',
-                           WebkitLineClamp: 3,
+                            WebkitLineClamp: 4,
                        }}
-                    >{brandName}</p>
+                    >{description}</p>
                 </div>
-                <div className="py-[1px]">
-                    <IconsCard selections={activeIcons}/>
-                </div>
+                <IconsCard selections={activeIcons}/>
             </div>
         </div>
     )
