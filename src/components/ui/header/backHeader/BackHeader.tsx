@@ -1,4 +1,4 @@
-import BackArrow from "../../../icons/header/BackArrow";
+import BackArrow from "../../../../icons/header/BackArrow";
 
 interface BackHeaderProps {
     title: string;

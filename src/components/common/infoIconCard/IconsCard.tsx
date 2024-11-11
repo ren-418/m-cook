@@ -7,7 +7,7 @@ interface IconsCardProperties {
 
 const IconsCard: React.FC<IconsCardProperties> = ({ selections }) => {
     return (
-        <div className="relative w-[154px] h-[39px] flex items-center space-x-[15px]">
+        <div className="relative w-[154px] h-fit flex items-center space-x-[15px]">
             <InfoIcon type="Vegan" isActive={selections[0]} />
             <InfoIcon type="Vegetarian" isActive={selections[1]} />
             <InfoIcon type="GlutenFree" isActive={selections[2]} />
