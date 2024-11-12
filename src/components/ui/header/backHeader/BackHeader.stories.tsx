@@ -2,7 +2,7 @@ import BackHeader from "./BackHeader";
 import {Meta} from "@storybook/react";
 
 const meta = {
-    title: 'Components/BackHeader',
+    title: 'UI/Header/BackHeader',
     component: BackHeader,
     parameters: {
         layout: 'centered',

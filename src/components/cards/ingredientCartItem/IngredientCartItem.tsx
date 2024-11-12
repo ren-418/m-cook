@@ -7,13 +7,12 @@ interface IngredientCartItemProps {
     name: string,
     brand: string,
     finalPrice: number,
-    previousPrice?: number,
     discount?: number,
     currency: SupportedCurrencies,
     imageUrl: string
 }
 
-const IngredientCartItem: React.FC<IngredientCartItemProps> = ({ name, brand, finalPrice, previousPrice, discount, currency, imageUrl }) => {
+const IngredientCartItem: React.FC<IngredientCartItemProps> = ({ name, brand, finalPrice, discount, currency, imageUrl }) => {
     const [count, setCount] = React.useState(1);
 
     return (

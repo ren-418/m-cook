@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 
 body {
@@ -33,4 +35,45 @@ h4 {
 
 .scrollbar-hide::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
+}
+
+img{
+    user-select: none;
+}
+
+.slick-dots {
+    white-space: nowrap;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-color: transparent;
+    border-radius: 1000px;
+    overflow: hidden;
+    outline: none;
+}
+
+.slick-dots li {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;
+}
+
+.slick-dots li button:before {
+    margin: 0;
+    font-size: 0.7rem;
+    color: #B2B2B2;
+    padding-top: 2px;
+
+}
+
+.slick-dots li.slick-active button:before {
+    bottom: 50%;
+    margin: 0;
+    font-size: 0.7rem;
+    color: white;
+    padding-top: 2px;
 }

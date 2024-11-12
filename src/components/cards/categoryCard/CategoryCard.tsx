@@ -13,8 +13,8 @@ interface categoryCardProps {
               <img 
                   src={imageUrl} 
                   alt={categoryName} 
-                  draggable="false"
-                  className="w-[40px] h-[40px] object-cover rounded-[8px]" 
+                  draggable={false}
+                  className="select-none w-[40px] h-[40px] object-cover rounded-[8px]" 
               />
               <p 
                   className="select-none flex-1 flex items-center text-left text-body-b text-neutral-800 px-[8px] overflow-hidden text-ellipsis"

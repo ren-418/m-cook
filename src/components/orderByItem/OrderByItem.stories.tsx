@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import OrderByItem from "./OrderByItem";
 
 const meta = {
-    title: 'Components/OrderByItem',
+    title: 'Common/Filter/OrderByItem',
     component: OrderByItem,
     parameters: {
         layout: 'centered',
