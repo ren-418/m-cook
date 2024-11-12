@@ -501,6 +501,11 @@ button,
   cursor: pointer;
 }
 
+button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /*
 Make sure disabled buttons don't get the pointer cursor.
 */
