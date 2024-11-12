@@ -1,5 +1,5 @@
 import FilterSection from "./FilterSection";
-import {Meta, StoryObj} from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
     title: 'Components/FilterSection',
@@ -9,12 +9,8 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {
-        onOrderBy: {
-
-        },
-        onFilter: {
-
-        }
+        onOrderBy: {},
+        onFilter: {},
     },
 } satisfies Meta<typeof FilterSection>;
 
@@ -23,5 +19,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const FilterSectionDefault: Story = {
-    render: () => <div className="w-[400px]"><FilterSection /></div>,
+    args: {
+        text: 'Order by',
+        onOrderBy: () => console.log('Order by clicked'),
+        onFilter: () => console.log('Filter clicked'),
+    },
+    render: (args) => <div className="w-[400px]"><FilterSection {...args} /></div>,
 };
