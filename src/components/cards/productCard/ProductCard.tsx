@@ -15,9 +15,19 @@ interface ProductCardProps {
 }
 
 function ProductCards({ingredientName, brandName, activeIcons, imageSrc, price, discount=0, onClick=()=>{}}: ProductCardProps) {
+
+  const [loading, setLoading] = React.useState(false);
+
+  const handleClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000);
+  }
+
   return (
     <div className='select-none flex flex-col overflow-hidden rounded-[12px] shadow-card bg-neutral-white w-[170px] h-[252px] relative'>
-      <div className='absolute top-[13px] right-[13px] z-10'>
+      <div className='absolute top-[6px] right-[6px] z-10'>
         <LikeButton />
       </div>
       <img draggable={false} src={imageSrc} className='w-full h-[93px] object-cover'/>
@@ -38,7 +48,7 @@ function ProductCards({ingredientName, brandName, activeIcons, imageSrc, price, 
         >{brandName}</p>
         <PriceBox inline={true} discount={discount} actualPrice={price} currency='USD'/>
         <IconsCard selections={activeIcons}/>
-        <Button onClick={onClick} size='sm' >
+        <Button onClick={handleClick} size='sm' loading={loading}>
           Add To Cart
         </Button>
       </div>

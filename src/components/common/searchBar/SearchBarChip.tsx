@@ -7,9 +7,9 @@ interface SearchBarChipProps {
 
 export default function SearchBarChip({ title, onClose }: SearchBarChipProps) {
   return (
-    <div className="bg-primary-300 flex flex-row items-center h-full text-neutral-white rounded-full px-2 py-1 text-body">
+    <div className="select-none bg-primary-300 flex flex-row items-center h-fit text-neutral-white rounded-full px-2 py-1 text-body">
       {title}
-      <CloseIcon onClick={onClose} className="w-4 h-4 ml-2" />
+      <CloseIcon onClick={onClose} className="w-4 h-4 ml-2 cursor-pointer" />
     </div>
   );
 }

@@ -28,7 +28,7 @@ const UsersMenu: React.FC<UsersMenuProps> = ({ onSettingsClick, onLogoutClick, o
     }, [onClose]);
 
     return (
-        <div ref={menuRef} className="absolute top-[85%] left-0 mt-2 ml-2 w-[200px] h-[180px] bg-white rounded-[8px] shadow-card flex flex-col py-[10px] bg-neutral-white z-50">
+        <div ref={menuRef} className="w-[200px] h-fit bg-white rounded-[8px] shadow-card flex flex-col py-[10px] bg-neutral-white z-50">
             <IconTitle icon={<Engine />} title={"Settings"} onClick={onSettingsClick} />
             <IconTitle icon={<Heart />} title={"Favorites"} onClick={onFavoritesClick} />
             <IconTitle icon={<Logout />} title={"Logout"} onClick={onLogoutClick} />

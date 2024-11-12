@@ -32,34 +32,34 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ isOpen, onClose }) => {
     }, [isOpen, onClose]);
 
     return (
-        <div className={`fixed inset-0 flex justify-center items-end `}>
+        <div className='fixed inset-0 flex justify-center items-end w-full'>
             <div className="bg-neutral-800 bg-opacity-20 fixed inset-0 " onClick={onClose}></div>
-            <div className="bg-neutral-white opacity-100 relative rounded-t-[20px]">
+            <div className="bg-neutral-white opacity-100 relative rounded-t-[20px] pb-[50px] flex flex-col items-start w-full min-h-[60%]">
                 <div
                     ref={bottomSheetRef}
                     className={`flex flex-col items-center p-[10px_16px] gap-5 w-[390px] bottom-0 transition-all duration-500 opacity-100 rounded-t-[16px]`}
                 >
 
-                    <div className="flex flex-col items-center gap-2 w-full absolute top-0 opacity-100" style={{ paddingTop: '16px', paddingBottom: '12px', zIndex: 10 }}>
+                    <div className="flex flex-col items-center w-full opacity-100 py-[10px] z-10">
                         <DragHandle onClick={onClose} />
                     </div>
 
 
-                    <div className="flex flex-col items-start gap-4 w-[358px] h-[175px] opacity-100">
-                        <h2 className="text-lg font-semibold text-left opacity-100">Sort By</h2>
+                    <div className="flex flex-col items-start w-full h-fit opacity-100 mb-[20px]">
+                        <h4 className="text-neutral-800 font-semibold text-left opacity-100 mb-[10px]">Order By</h4>
                         <OrderByItem criteria="Quality" index={0} onClick={() => {}} />
                         <OrderByItem criteria="Price" index={1} onClick={() => {}} />
                         <OrderByItem criteria="Location" index={2} onClick={() => {}} />
                     </div>
 
-                    <div className="flex flex-col items-start gap-5 w-[358px] h-[175px] opacity-100">
-                        <h2 className="text-lg font-semibold text-left">Filter By</h2>
+                    <div className="flex flex-col items-start w-full h-fit opacity-100">
+                        <h4 className="text-neutral-800 font-semibold text-left opacity-100 mb-[20px]">Filter By</h4>
                         <div className="grid grid-cols-3 gap-4 w-[358px] h-[96px]">
-                            <CheckBoxItem title="Filter" />
+                            <CheckBoxItem title="Keto" />
                             <CheckBoxItem title="Vegan" />
                             <CheckBoxItem title="Sweet" />
                             <CheckBoxItem title="Vegetarian" />
-                            <CheckBoxItem title="Low Calories" />
+                            <CheckBoxItem title="Low Fat" />
                             <CheckBoxItem title="Savory" />
                             <CheckBoxItem title="Gluten Free" />
                             <CheckBoxItem title="Spicy" />

@@ -36,7 +36,7 @@ const MainHeader: React.FC<MainHeaderProps> = ({ text, productsInCart }) => {
                 </button>
             </div>
             {isMenuOpen &&
-                <div className="z-30">
+                <div className="z-30 absolute bottom-[-155px] left-[16px]">
                     <UserMenu onClose={closeMenu} />
                 </div>
             }

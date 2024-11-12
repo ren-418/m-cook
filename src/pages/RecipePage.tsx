@@ -89,7 +89,7 @@ function RecipePage() {
                 </Carrousel>
             </div>
             <div className='px-[16px] w-full'>
-                <Button leftIcon={<Cart/>} size="sm" width='100%'>Add Products To Cart</Button>
+                <Button leftIcon={<Cart/>} width='100%'>Add Products To Cart</Button>
             </div>
             <div className='w-full'>
                 <Carrousel title='Similar Recipes'>

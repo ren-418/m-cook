@@ -34,7 +34,7 @@ export const BasicSearchBar: Story = {
   },
 
   render: (args) => (
-    <div style={{ width: '358px', height: '500px' }}>
+    <div style={{ width: '500px', height: '500px' }}>
       <SeachBar {...args} />
     </div>
   )

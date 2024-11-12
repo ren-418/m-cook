@@ -4,7 +4,7 @@ import { useState } from "react";
 import DragHandle from "../../../icons/BottomSheet/DragHandle";
 
 const meta = {
-    title: 'Components/BottomSheet',
+    title: 'UI/BottomSheet',
     component: BottomSheet,
     parameters: {
         layout: 'centered',

@@ -29,6 +29,11 @@ export default function SearchBar(props: SearchBarProps) {
         setTimeout(() => setPlayBottomTransition(!isOpened), 500);
     }
 
+    function Open(){
+        setIsOpened(true);
+        setTimeout(() => setPlayBottomTransition(true), 500);
+    }
+
     function addSmallProductCard(name: string) {
         setSelectedItems([...selectedItems, name]);
     }
@@ -39,17 +44,18 @@ export default function SearchBar(props: SearchBarProps) {
 
     return (
         <>
-            <div className={`w-full flex flex-row p-1 gap-1 shadow-card bg-neutral-white mt-[16px] ${props.isSelector && isOpened ? "rounded-t-[28px]" : "rounded-full"} transition-all duration-500 items-center`}>
+            <div className={`w-full flex flex-row p-1 gap-1 h-[50px] shadow-card bg-neutral-white mt-[16px] ${props.isSelector && isOpened ? "rounded-t-[28px]" : "rounded-full"} transition-all duration-500 items-center`}>
                 <SearchIcon />
                 {selectedItems.length === 0 && (
                     <input
                         type="text"
                         placeholder={props.placeholder}
+                        onFocus={() => Open()}
                         className="w-full bg-transparent h-min placeholder-neutral-800 text-body focus:outline-none"
                     />
                 )}
                 {selectedItems.length > 0 && (
-                    <div className="flex flex-wrap w-full gap-0.5">
+                    <div className="flex flex-wrap w-full gap-0.5 h-[30px] overflow-hidden">
                         {selectedItems.map((item, index) => (
                             <SearchBarChip
                                 title={item}
@@ -64,17 +70,18 @@ export default function SearchBar(props: SearchBarProps) {
                 ) : (
                     <SelectorIcon
                         onClick={toggleIsOpened}
-                        className={`transform ${isOpened ? '' : 'rotate-180'} duration-[400ms] transition-all`}
+                        className={`transform ${isOpened ? '' : 'rotate-180'} duration-[400ms] transition-all cursor-pointer`}
                     />
                 )}
             </div>
-            {props.isSelector && (
-                <section className={`w-full h-full grid scrollbar-hide grid-cols-2 gap-2 rounded-b-[28px] shadow-card place-items-center overflow-y-auto transition-max-height duration-500 ease-out ${playBottomTransition ? 'max-h-96 py-6' : 'p-0 max-h-0'}`}>
+            {props.isSelector && isOpened && (
+                <section className={`w-full h-full items-center justify-center justify-items-center grid scrollbar-hide grid-cols-[168px_168px] gap-2 rounded-b-[28px] shadow-card place-items-center overflow-y-auto transition-max-height duration-500 ease-out ${playBottomTransition ? 'max-h-96 py-6' : 'p-0 max-h-0'}`}>
                     {productCards.map((product, index) => (
                         <SmallProductCard
-                            onClick={() => addSmallProductCard(product.productName)}
+                            onClick={() => addSmallProductCard(product.productName + " " + index)}
                             key={index}
-                            {...product}
+                            productName={product.productName + " " + index}
+                            imageUrl={product.imageUrl}
                         />
                     ))}
                 </section>

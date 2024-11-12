@@ -2,7 +2,7 @@ import FilterSection from "./FilterSection";
 import { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-    title: 'Components/FilterSection',
+    title: 'Common/Filter/FilterSection',
     component: FilterSection,
     parameters: {
         layout: 'centered',
