@@ -38,7 +38,7 @@ function RecipeTextCard({ content }: RecipeTextCardProps) {
             <h4 className='select-none text-neutral-800 w-full'>How To Make It</h4>
             <p
                 ref={textRef}
-                className={`select-none w-full text-left text-body text-neutral-700 overflow-hidden text-ellipsis ${isExpanded ? '' : 'line-clamp-5'}`}
+                className={`select-none w-full text-left text-body text-neutral-700 overflow-hidden text-ellipsis whitespace-pre-line ${isExpanded ? '' : 'line-clamp-5'}`}
                 style={{
                     display: isExpanded ? 'block' : '-webkit-box',
                     WebkitBoxOrient: 'vertical',

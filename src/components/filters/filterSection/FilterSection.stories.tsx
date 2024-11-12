@@ -9,11 +9,12 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {
-        text: {
-            control: 'text',
+        onOrderBy: {
+
         },
-        onOrderBy: {},
-        onFilter: {}
+        onFilter: {
+
+        }
     },
 } satisfies Meta<typeof FilterSection>;
 
@@ -22,9 +23,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const FilterSectionDefault: Story = {
-    args: {
-        text: 'Text',
-        onOrderBy: () => {},
-        onFilter: () => {}
-    },
+    render: () => <div className="w-[400px]"><FilterSection /></div>,
 };

@@ -37,40 +37,43 @@ h4 {
     display: none;  /* Safari and Chrome */
 }
 
-
-
+img{
+    user-select: none;
+}
 
 .slick-dots {
     white-space: nowrap;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    display: flex;
-    justify-content: center;
+    display: flex !important;
+    justify-content: space-between;
     align-items: center;
-    align-content: center;
-    transform: translateX(-50%);
-    background-color: rgba(23, 166, 142, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     border: none;
     border-color: transparent;
     border-radius: 1000px;
-    width: 33%;
     overflow: hidden;
     outline: none;
 }
 
+.slick-dots li {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;
+}
+
 .slick-dots li button:before {
-    position: absolute;
-    transform: translateY(-10%);
     margin: 0;
     font-size: 0.7rem;
     color: #B2B2B2;
+    padding-top: 2px;
+
 }
 
 .slick-dots li.slick-active button:before {
-    position: absolute;
     bottom: 50%;
     margin: 0;
     font-size: 0.7rem;
     color: white;
+    padding-top: 2px;
 }

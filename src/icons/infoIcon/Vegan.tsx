@@ -1,7 +1,6 @@
 import { InfoIconCardProps } from "./infoIconCard";
 
 export default function Vegan({ selected }: InfoIconCardProps) {
-    console.log(selected);
     const fillColor = selected ? "#D1EDE8" : "white";
 
     return (
