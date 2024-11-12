@@ -147,16 +147,16 @@ function Ingredients() {
     ];
 
     return (
-        <div className="flex flex-col min-h-screen">
-            <div className="sticky top-0 z-10">
+        <div className="flex flex-col min-h-screen bg-background">
+            <div className="sticky top-0 z-30 bg-background">
                 <MainHeader productsInCart={10} text={"Ingredients"} />
             </div>
-            <div className="sticky top-[90px] z-10 bg-neutral-white px-[16px] gap-[10px]">
+            <div className="sticky top-[90px] z-10 bg-background px-[16px] gap-[10px]">
                 <SeachBar isSelector={false} placeholder={"Search products"} />
                 <div className="my-[16px]">
                     <FilterSection text={"Order by"} onOrderBy={openBottomSheet} onFilter={openBottomSheet} />
                 </div>
-                </div>
+            </div>
             <div className="flex-grow px-[16px] pt-[16px] overflow-y-auto z-0">
                 <GridComponent>
                     {ingredients.map((ingredient, index) => (
@@ -168,7 +168,7 @@ function Ingredients() {
                 <NavBar />
             </div>
             {bottomSheet && (
-                <div className="z-20">
+                <div className="z-50">
                     <BottomSheet onClose={closeBottomSheet} isOpen={bottomSheet} />
                 </div>
             )}

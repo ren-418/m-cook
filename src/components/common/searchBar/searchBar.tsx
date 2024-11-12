@@ -17,7 +17,7 @@ export default function SeachBar(props: SearchBarProps) {
   });
   return (
     <>
-      <search className={`w-full flex flex-row p-1 g-1 shadow-card ${props.isSelector ? "rounded-t-[28px]" : "rounded-full"} items-center`}>
+      <search className={`w-full flex flex-row p-1 g-1 shadow-card bg-neutral-white ${props.isSelector ? "rounded-t-[28px]" : "rounded-full"} items-center`}>
         <SearchIcon />
         <input type="text" placeholder={props.placeholder}
           className="w-full bg-transparent h-min placeholder-neutral-800 text-body focus:outline-none" />
